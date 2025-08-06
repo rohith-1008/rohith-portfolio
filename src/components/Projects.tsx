@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { ExternalLink, Github, Shield, CheckSquare } from 'lucide-react';
+import { ExternalLink, Github, Shield, CheckSquare, Calendar, Wallet } from 'lucide-react';
 
 export const Projects = () => {
   const projects = [
@@ -11,6 +11,22 @@ export const Projects = () => {
       icon: Shield,
       github: "https://github.com/rohith-1008",
       color: "from-blue-500 to-cyan-500"
+    },
+    {
+      title: "Event Buddy – College Event Management System",
+      description: "A web application to manage college events, participant registrations, and scheduling. Features event creation/editing, participant registration with email confirmation, event calendar with filters, and real-time data updates using Firebase.",
+      tech: ["HTML", "CSS", "JavaScript", "Firebase"],
+      icon: Calendar,
+      github: "https://github.com/rohith-1008/event-buddy",
+      color: "from-green-500 to-emerald-500"
+    },
+    {
+      title: "Budget Buddy – Personal Expense Tracker (PWA)",
+      description: "A progressive web app to track and manage income and expenses with interactive UI and offline support. Features transaction management, visual analytics using Chart.js, CSV export, and dark/light mode toggle.",
+      tech: ["HTML", "CSS", "JavaScript", "Chart.js", "Service Workers"],
+      icon: Wallet,
+      github: "https://github.com/rohith-1008/budget-buddy",
+      color: "from-orange-500 to-red-500"
     },
     {
       title: "AuraDo – Advanced To-Do List Web App",

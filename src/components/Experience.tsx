@@ -3,11 +3,31 @@ import React from 'react';
 import { Briefcase, Calendar, MapPin, CheckCircle } from 'lucide-react';
 
 export const Experience = () => {
-  const achievements = [
-    "Developed web applications using Java, Spring Boot, MySQL, HTML, and CSS",
-    "Implemented real-world features across frontend and backend",
-    "Gained hands-on experience with REST APIs and database integration",
-    "Collaborated in agile-based workflows and contributed to UI enhancements"
+  const experiences = [
+    {
+      title: "Full Stack Java Intern",
+      company: "CODETANTRA",
+      duration: "Nov 2024 – Feb 2025",
+      location: "Remote",
+      achievements: [
+        "Built and debugged REST APIs using Spring Boot and MySQL",
+        "Handled end-to-end backend module integration",
+        "Contributed to UI enhancements and component debugging",
+        "Used Git and GitHub for version control and collaborative development"
+      ]
+    },
+    {
+      title: "Software Development Intern",
+      company: "42Learn",
+      duration: "Apr 2024 – Jun 2024",
+      location: "Ongole",
+      achievements: [
+        "Developed web applications using Java, Spring Boot, MySQL, HTML, and CSS",
+        "Implemented real-world features across frontend and backend",
+        "Gained hands-on experience with REST APIs and database integration",
+        "Collaborated in agile-based workflows and contributed to UI enhancements"
+      ]
+    }
   ];
 
   return (
@@ -20,43 +40,47 @@ export const Experience = () => {
           <div className="w-24 h-1 bg-teal-400 mx-auto"></div>
         </div>
 
-        <div className="bg-slate-700 rounded-lg p-8 border-l-4 border-teal-400 hover:bg-slate-600 transition-all duration-300">
-          <div className="flex items-start gap-6">
-            <div className="bg-teal-500 p-4 rounded-lg">
-              <Briefcase className="w-8 h-8 text-white" />
-            </div>
-            
-            <div className="flex-1">
-              <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-4 mb-4">
-                <div>
-                  <h3 className="text-2xl font-bold text-white mb-2">
-                    Software Development Intern
-                  </h3>
-                  <p className="text-xl text-teal-400 font-semibold mb-2">42Learn</p>
+        <div className="space-y-8">
+          {experiences.map((experience, index) => (
+            <div key={index} className="bg-slate-700 rounded-lg p-8 border-l-4 border-teal-400 hover:bg-slate-600 transition-all duration-300">
+              <div className="flex items-start gap-6">
+                <div className="bg-teal-500 p-4 rounded-lg">
+                  <Briefcase className="w-8 h-8 text-white" />
                 </div>
                 
-                <div className="flex flex-col gap-2 text-sm text-gray-300">
-                  <div className="flex items-center gap-2">
-                    <Calendar size={16} />
-                    Apr 2024 – Jun 2024
+                <div className="flex-1">
+                  <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-4 mb-4">
+                    <div>
+                      <h3 className="text-2xl font-bold text-white mb-2">
+                        {experience.title}
+                      </h3>
+                      <p className="text-xl text-teal-400 font-semibold mb-2">{experience.company}</p>
+                    </div>
+                    
+                    <div className="flex flex-col gap-2 text-sm text-gray-300">
+                      <div className="flex items-center gap-2">
+                        <Calendar size={16} />
+                        {experience.duration}
+                      </div>
+                      <div className="flex items-center gap-2">
+                        <MapPin size={16} />
+                        {experience.location}
+                      </div>
+                    </div>
                   </div>
-                  <div className="flex items-center gap-2">
-                    <MapPin size={16} />
-                    Ongole
+                  
+                  <div className="space-y-3">
+                    {experience.achievements.map((achievement, achievementIndex) => (
+                      <div key={achievementIndex} className="flex items-start gap-3">
+                        <CheckCircle className="w-5 h-5 text-teal-400 mt-0.5 flex-shrink-0" />
+                        <p className="text-gray-300">{achievement}</p>
+                      </div>
+                    ))}
                   </div>
                 </div>
               </div>
-              
-              <div className="space-y-3">
-                {achievements.map((achievement, index) => (
-                  <div key={index} className="flex items-start gap-3">
-                    <CheckCircle className="w-5 h-5 text-teal-400 mt-0.5 flex-shrink-0" />
-                    <p className="text-gray-300">{achievement}</p>
-                  </div>
-                ))}
-              </div>
             </div>
-          </div>
+          ))}
         </div>
       </div>
     </section>
